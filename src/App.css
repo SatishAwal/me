@@ -12,14 +12,20 @@
 }
 
 .intro {
-  flex: 1;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+    flex: 1; /* Allows it to take available space */
+    min-width: 300px; /* Ensures it doesn't get too small */
+    font-family: var(--font-family-sans); /* Consistency */
+    text-align: left; /* Align text to left by default for readability */
 }
 
 .intro h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+    font-size: var(--heading-font-size-xl);
+    margin-bottom: 10px;
+    /* Removed text-align: justify; for h1. Headings are typically left-aligned for impact. */
+    line-height: 1.2; /* Improve line spacing for large text */
+    color: var(--primary-color);
 }
+
 
 .intro h2 {
   font-size: 36px;
