@@ -5,18 +5,25 @@ const Header = () => {
     return (
         <header className="header" id="home">
             <div className="intro">
-                <h1>Hi there! 👋</h1>
-                <h2>I'm Satish</h2>
+                <h1>
+                    <span>Hi there! 👋</span>
+                    <br />
+                    <span>I'm Satish</span>
+                </h1>
                 <p>
-                    I am a Front-End Developer and student with a solid foundation in creating intuitive, user-centered digital experiences.
+                    I'm a <strong>Front-End Developer</strong> and <strong>Mobile Application Development student</strong> with a solid foundation in creating intuitive, user-centered digital experiences.
                 </p>
                 <p>
-                    With a background in Industrial Design and UX Design, I bring a unique blend of creativity and technical expertise to crafting seamless, engaging interfaces. I’m passionate about improving daily life through thoughtful design, and my ability to collaborate effectively in agile environments allows me to contribute to diverse teams and projects. Currently focused on honing my skills in mobile app development,
-                    I’m excited to innovate and create impactful digital solutions for the next generation of products.
+                    With a background in <strong>Industrial Design and UX Design</strong>, I bring a unique blend of creativity and technical expertise to crafting seamless, engaging interfaces. I'm passionate about improving daily life through thoughtful design, and my ability to collaborate effectively in agile environments allows me to contribute to diverse teams and projects.
                 </p>
+                <p>
+                    Currently focused on honing my skills in mobile app development, I'm excited to innovate and create impactful digital solutions for the next generation of products.
+                </p>
+                <a href="#contact" className="btn primary-btn">Let's Connect</a>
             </div>
+
             <div className="profile-image">
-                <img src={profile} alt="Satish" width="600" height="600" />
+                <img src={profile} alt="Satish - Front-End & Mobile App Developer" />
             </div>
         </header>
 

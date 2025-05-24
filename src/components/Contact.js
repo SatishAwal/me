@@ -66,8 +66,8 @@ const Contact = () => {
       {/* Contact Info Section */}
       <div className="contact-info">
         <h4>Contact Information</h4>
-        <p><i className="fas fa-map-marker-alt"></i> Cambrian College, 108 King Street, Sudbury, Canada</p>
-        <p><i className="fas fa-phone"></i> +1 705 561 0179</p>
+        <p><i className="fas fa-map-marker-alt"></i> Cambrian College, Sudbury, Canada</p>
+        <p><i className="fas fa-phone"></i> +1 705 561 01**</p>
         <p><i className="fas fa-envelope"></i> satishawal94@gmail.com</p>
         <div className="social-icons">
           <a href="wwww.instagram.com/satishawal"><i className="fab fa-instagram"></i></a>

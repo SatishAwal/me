@@ -1,3 +1,18 @@
+/* Variables for consistency and easy updates */
+:root {
+    --primary-color: #007BFF; /* A vibrant blue */
+    --secondary-color: #6c757d; /* A muted grey for secondary text */
+    --text-color: #333; /* Darker text for readability */
+    --background-color: #f8f9fa; /* Light background */
+    --heading-font-size-xl: 4.5em; /* Larger for impact on desktop */
+    --heading-font-size-lg: 3em;
+    --heading-font-size-md: 2.2em;
+    --paragraph-font-size: 1.15em;
+    --font-family-sans: 'Inter', sans-serif; /* Modern sans-serif font */
+    --border-radius-default: 10px;
+    --spacing-unit: 20px;
+}
+
 .container {font-family:Verdana, Geneva, Tahoma, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
@@ -6,49 +21,92 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 25px 0;
+  justify-content: space-between;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-default);
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    text-align: left;
+    gap: 50px;
+  }
 }
 
 .intro {
     flex: 1; /* Allows it to take available space */
-    min-width: 300px; /* Ensures it doesn't get too small */
+    min-width: 280px; /* Ensures it doesn't get too small */
     font-family: var(--font-family-sans); /* Consistency */
-    text-align: left; /* Align text to left by default for readability */
+    text-align: left;
+    padding-right: 20px;
+    margin-bottom: 20px; /* Align text to left by default for readability */
 }
+
+@media (min-width: 768px) {
+    .intro {
+        margin-bottom: 0; /* No bottom margin when side-by-side */
+    }
+}
+
 
 .intro h1 {
-    font-size: var(--heading-font-size-xl);
-    margin-bottom: 10px;
-    /* Removed text-align: justify; for h1. Headings are typically left-aligned for impact. */
-    line-height: 1.2; /* Improve line spacing for large text */
-    color: var(--primary-color);
-}
-
-
-.intro h2 {
-  font-size: 36px;
+  font-size: var(--heading-font-size-lg);
+  color: var(--primary-color);
+  line-height: 1.2;
   margin-bottom: 20px;
 }
 
-.intro p {
-  font-size: 18px;
-  margin-bottom: 10px;
+.intro h1 span {
+  display: block;
 }
 
-.intro button {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
+.intro p {
+  font-size: var(--paragraph-font-size);
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.btn {
+    display: inline-block; /* Allows padding and margins */
+    padding: 12px 25px;
+    border-radius: var(--border-radius-default);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+.profile-image {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
 }
 
 .profile-image img {
-  max-width: 95%;
+  width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .work-history,
