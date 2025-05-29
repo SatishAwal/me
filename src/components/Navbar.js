@@ -1,23 +1,37 @@
 // src/Navbar.js
 import React from 'react';
-import '../styles/navbar.css'; // Import the CSS for styling
-import satish from '../assets/satish.png'
+import '../styles/navbar.css';
+import satish from '../assets/satish.png';
 import resume from '../assets/Cv.pdf';
-
 
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <div className="logo">
-                <img src={satish} alt="Logo" /> {/* Replace with your logo path */}
+            <div className="navbar-container">
+                <div className="navbar-logo">
+                    <img 
+                        src={satish} 
+                        alt="Satish Awal"
+                    />
+                    <span className="logo-text">Satish Awal</span>
+                </div>
+
+                <div className="nav-links">
+                    <a href="#home" className="nav-link">Home</a>
+                    <a href="#projects" className="nav-link">Projects</a>
+                    <a href="#experience" className="nav-link">Experience</a>
+                    <a href="#skills" className="nav-link">Skills</a>
+                    <a href="#contact" className="nav-link">Contact</a>
+                    <a 
+                        href={resume} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="nav-link resume-button"
+                    >
+                        Resume
+                    </a>
+                </div>
             </div>
-            <ul className="nav-links">
-                <li><a href="#home"><i class="fa fa-user" aria-hidden="true"></i> Home</a></li>
-                <li><a href="#projects"><i class="fa fa-sitemap" aria-hidden="true"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                <li><a href={resume} target="_blank" rel="noreferrer"><i class="fa fa-file" aria-hidden="true"></i><span> </span>Resume</a>
-                </li>
-            </ul>
         </nav>
     );
 };
