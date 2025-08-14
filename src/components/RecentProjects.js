@@ -1,6 +1,5 @@
 // RecentProjects.js
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
 import '../styles/RecentProjects.css';
 
 const projects = [
@@ -31,10 +30,10 @@ const projects = [
 ];
 
 const RecentProjects = () => {
-  const { isDarkMode } = useTheme();
+
 
   return (
-    <section id="projects" className={`projects-section ${isDarkMode ? 'dark' : ''}`}>
+    <section id="projects" className={`projects-section`}>
       <div className="projects-container">
         <div className="section-header">
           <h2>Recent Projects</h2>

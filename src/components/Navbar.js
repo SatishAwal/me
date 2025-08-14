@@ -1,39 +1,89 @@
 // src/Navbar.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/navbar.css';
-import satish from '../assets/satish.png';
-import resume from '../assets/Cv.pdf';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="navbar-container">
-                <div className="navbar-logo">
-                    <img 
-                        src={satish} 
-                        alt="Satish Awal"
-                    />
-                    <span className="logo-text">Satish Awal</span>
-                </div>
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-                <div className="nav-links">
-                    <a href="#home" className="nav-link">Home</a>
-                    <a href="#projects" className="nav-link">Projects</a>
-                    <a href="#experience" className="nav-link">Experience</a>
-                    <a href="#skills" className="nav-link">Skills</a>
-                    <a href="#contact" className="nav-link">Contact</a>
-                    <a 
-                        href={resume} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="nav-link resume-button"
-                    >
-                        Resume
-                    </a>
-                </div>
-            </div>
-        </nav>
-    );
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-container">
+        <div className="nav-logo">
+          <a href="#home" onClick={() => scrollToSection('#home')}>
+            <span className="logo-text">Satish</span>
+            <span className="logo-dot">.</span>
+          </a>
+        </div>
+
+        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+              }}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        <div className="nav-cta">
+          <a 
+            href="#contact" 
+            className="cta-button"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('#contact');
+            }}
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <div 
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
+
+

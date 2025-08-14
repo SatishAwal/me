@@ -1,32 +1,45 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar.js';
-import Introduction from './components/Introduction.js';
-import RecentProjects from './components/RecentProjects.js';
-import SkillList from './components/SkillList';
-import Footer from './components/Footer';
-import Contact from './components/Contact';
-import WorkHistory from './components/WorkHistory.js';
-import Certifications from './components/Certifications.js';
+import Hero from './components/Hero.js';
+import About from './components/About.js';
+import Skills from './components/Skills.js';
+import Projects from './components/Projects.js';
+import Experience from './components/Experience.js';
+import Contact from './components/Contact.js';
+import Footer from './components/Footer.js';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-spinner"></div>
+        <p>Loading Portfolio...</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="container">
+    <div className="app">
       <Navbar />
-
-      <Introduction />
-
-      <RecentProjects />
-
-      <WorkHistory />
-
-      <SkillList />
-
-      <Certifications />
-
-      <Contact />
-
+      <main className="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
