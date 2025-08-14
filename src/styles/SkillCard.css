@@ -1,25 +1,150 @@
 .skill-card {
-    background-color: white; /* Card background */
-    border: 1px solid #e1e1e1; /* Card border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-    margin: 20px; /* Space around each card */
-    padding: 15px; /* Padding inside the card */
-    width: calc(25% - 40px); /* Set width to roughly 1/4 of the container minus margins */
-    max-width: 300px; /* Optional: maximum width for each card */
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.skill-card h2 {
-    font-size: 18px; /* Title font size */
-    margin-bottom: 10px; /* Space below title */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.skill-card ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.skill-card li {
-    font-size: 16px; /* List item font size */
-    margin: 5px 0; /* Space between list items */
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.skill-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.skill-item {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: #2d3436;
+}
+
+.skill-percentage {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.skill-progress {
+    height: 8px;
+    background: #f1f2f6;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: growBar 1s ease forwards;
+}
+
+.progress-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes growBar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Add animation delay for each skill item */
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+
+@media (max-width: 768px) {
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .skill-title {
+        font-size: 1.25rem;
+    }
 }

@@ -1,19 +1,46 @@
-.skill-list {
-    display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap to the next line */
-    justify-content: center; /* Center cards */
-    padding: 10px; /* Padding around the list */
+.skills-section {
+    padding: 4rem 0;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 }
 
-/* Responsive adjustments */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #4834d4, #2ecc71);
+    border-radius: 2px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
-    .skill-card {
-        width: calc(50% - 40px); /* 2 cards per row on medium screens */
+    .skills-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
-}
 
-@media (max-width: 480px) {
-    .skill-card {
-        width: calc(100% - 40px); /* 1 card per row on small screens */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 }

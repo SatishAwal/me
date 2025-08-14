@@ -1,25 +1,89 @@
 // src/Navbar.js
-import React from 'react';
-import '../styles/navbar.css'; // Import the CSS for styling
-import satish from '../assets/satish.png'
-import resume from '../assets/Cv.pdf';
-
+import React, { useState, useEffect } from 'react';
+import '../styles/navbar.css';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="logo">
-                <img src={satish} alt="Logo" /> {/* Replace with your logo path */}
-            </div>
-            <ul className="nav-links">
-                <li><a href="#home"><i class="fa fa-user" aria-hidden="true"></i> Home</a></li>
-                <li><a href="#projects"><i class="fa fa-sitemap" aria-hidden="true"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                <li><a href={resume} target="_blank" rel="noreferrer"><i class="fa fa-file" aria-hidden="true"></i><span> </span>Resume</a>
-                </li>
-            </ul>
-        </nav>
-    );
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-container">
+        <div className="nav-logo">
+          <a href="#home" onClick={() => scrollToSection('#home')}>
+            <span className="logo-text">Satish</span>
+            <span className="logo-dot">.</span>
+          </a>
+        </div>
+
+        <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              className="nav-link"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+              }}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        <div className="nav-cta">
+          <a 
+            href="#contact" 
+            className="cta-button"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('#contact');
+            }}
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <div 
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
+
+
