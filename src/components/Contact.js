@@ -58,48 +58,6 @@ const Contact = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <div className="contact-container" id='contact'>
-      {/* Contact Form Section */}
-      <div className="contact-form">
-        <h2>Contact Me</h2>
-        <form onSubmit={sendEmail}>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" value={formData.name}
-            onChange={handleChange}
-            required placeholder="Full Name" />
-
-          <label htmlFor="email">Email Address</label>
-          <input type="email" id="email" name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Email" />
-
-          <label htmlFor="message">Your Message</label>
-          <textarea id="message" name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            placeholder="Your Message"></textarea>
-
-          <button type="submit">Send</button>
-        </form>
-      </div>
-
-      {/* Contact Info Section */}
-      <div className="contact-info">
-        <h4>Contact Information</h4>
-        <p><i className="fas fa-map-marker-alt"></i> Cambrian College, Sudbury, Canada</p>
-        <p><i className="fas fa-phone"></i> +1 705 561 01**</p>
-        <p><i className="fas fa-envelope"></i> satishawal94@gmail.com</p>
-        <div className="social-icons">
-          <a href="wwww.instagram.com/satishawal"><i className="fab fa-instagram"></i></a>
-          <a href="wwww.facebook.com/satishawal"><i className="fab fa-facebook"></i></a>
-          <a href="wwww.x.com/satishawal"><i className="fab fa-twitter"></i></a>
-          <a href="wwww.linkedin.com/satishawal"><i className="fab fa-linkedin"></i></a>
-          <a href="wwww.github.com/satishawal"><i className="fab fa-github"></i></a>
-=======
     <section id="contact" className="contact-section">
       <div className="section-container">
         <div className="section-header">
@@ -235,7 +193,6 @@ const Contact = () => {
               </button>
             </form>
           </div>
->>>>>>> edit
         </div>
       </div>
     </section>
