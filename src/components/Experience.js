@@ -120,7 +120,7 @@ const Experience = () => {
           ))}
         </div>
 
-        <div className="experience-summary">
+        {/* <div className="experience-summary">
           <div className="summary-grid">
             <div className="summary-item">
               <div className="summary-icon">🎯</div>
@@ -138,7 +138,7 @@ const Experience = () => {
               <p>Experience working in teams, managing client relationships, and delivering projects on time and within scope</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -102,8 +102,21 @@ const About = () => {
               <div className="education-item">
                 <div className="education-icon">🎓</div>
                 <div className="education-content">
+                  <h5>Business Analytics</h5>
+                  <p>Cambrian College • 2024 - 2025</p>
+                </div>
+              </div><div className="education-item">
+                <div className="education-icon">🎓</div>
+                <div className="education-content">
+                  <h5>Mobile Application Development</h5>
+                  <p>Cambrian College • 2024 - 2025</p>
+                </div>
+              </div>
+              <div className="education-item">
+                <div className="education-icon">🎓</div>
+                <div className="education-content">
                   <h5>Bachelor in Computer Science</h5>
-                  <p>University Name • 2020 - 2024</p>
+                  <p>Tribhuvan University • 2013 - 2017</p>
                 </div>
               </div>
             </div>
