@@ -6,18 +6,18 @@ const Experience = () => {
     {
       id: 1,
       title: "Frontend Developer",
-      company: "Tech Solutions Inc.",
-      period: "2023 - Present",
-      location: "Remote",
+      company: "Pek Academy",
+      period: "2019 - 2023",
+      location: "Kathmandu, Nepal",
       description: "Developing responsive web applications using React, TypeScript, and modern CSS. Collaborating with design and backend teams to implement user interfaces and ensure optimal user experience.",
       technologies: ["React", "TypeScript", "CSS3", "Git", "Agile"],
       type: "work"
     },
     {
       id: 2,
-      title: "UI/UX Design Intern",
-      company: "Creative Design Studio",
-      period: "2022 - 2023",
+      title: "Frontend Developer Intern",
+      company: "Novelty Technology",
+      period: "2017 - 2018",
       location: "Kathmandu, Nepal",
       description: "Created user interface designs and prototypes using Figma. Conducted user research and usability testing to improve product design and user experience.",
       technologies: ["Figma", "Adobe XD", "User Research", "Prototyping", "Design Systems"],
@@ -27,18 +27,18 @@ const Experience = () => {
       id: 3,
       title: "Freelance Web Developer",
       company: "Self-Employed",
-      period: "2021 - Present",
+      period: "2017 - Present",
       location: "Remote",
       description: "Building custom websites and web applications for clients. Managing projects from concept to deployment, ensuring client satisfaction and project success.",
-      technologies: ["React", "Node.js", "MongoDB", "WordPress", "Client Management"],
+      technologies: ["React","AngularJs" ,"Node.js", "MongoDB", "WordPress", "Client Management"],
       type: "work"
     },
     {
       id: 4,
-      title: "Bachelor in Computer Science",
-      company: "University of Technology",
-      period: "2020 - 2024",
-      location: "Kathmandu, Nepal",
+      title: "Bachelor in Computer Engineering",
+      company: "Tribhuvan University",
+      period: "2013 - 2017",
+      location: "Pokhara, Nepal",
       description: "Studying computer science with focus on software engineering, web development, and user interface design. Maintaining excellent academic performance.",
       technologies: ["Computer Science", "Software Engineering", "Web Development", "UI/UX Design"],
       type: "education"
@@ -51,6 +51,16 @@ const Experience = () => {
       location: "Online",
       description: "Intensive 6-month bootcamp covering full-stack web development. Learned modern web technologies and best practices through hands-on projects.",
       technologies: ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "MongoDB"],
+      type: "education"
+    },
+    {
+      id: 6,
+      title: "Machine Learning Coursera",
+      company: "Coursera",
+      period: "2019",
+      location: "Online",
+      description: "Intensive 6-month online course covering machine learning and deep learning. Learned supervised and unsupervised learning and best practices through hands-on projects.",
+      technologies: ["Python", "Octave", "Matlab", "Jupyter Notebook"],
       type: "education"
     }
   ];

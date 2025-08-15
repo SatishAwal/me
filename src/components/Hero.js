@@ -35,7 +35,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text fade-in-left">
             <div className="hero-badge">
-              <span>🚀 Welcome to my portfolio</span>
+              <span> Welcome to my portfolio</span>
             </div>
             
             <h1 className="hero-title">

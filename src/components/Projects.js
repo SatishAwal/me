@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import '../styles/Projects.css';
+import localBusinessExplorer from '../assets/localbusinessexplorer.png';
+import localBusiness from '../assets/localbusiness.jpeg';
+import travelBuddy from '../assets/travelbuddy.jpg';
+import eGrocery from '../assets/egrocery.png';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
     { id: 'all', name: 'All Projects' },
-    { id: 'web', name: 'Web Apps' },
     { id: 'mobile', name: 'Mobile Apps' },
     { id: 'design', name: 'UI/UX Design' }
   ];
@@ -14,69 +17,53 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      category: "web",
-      description: "A full-stack e-commerce platform with user authentication, product management, cart functionality, and payment integration using Stripe.",
-      image: "https://via.placeholder.com/600x400/667eea/ffffff?text=E-Commerce",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-      github: "https://github.com/username/ecommerce",
-      demo: "https://demo-ecommerce.com",
+      title: "Local Business Explorer",
+      category: "mobile",
+      description: "Built a cross-platform app to explore nearby businesses and local events. Integrated interactive map for live location tracking and business markers. Designed UI using Figma and implemented Firebase for real-time data and reviews. Worked collaboratively with a 3-person team using GitHub and Azure DevOps.",
+      image: localBusinessExplorer,
+      technologies: [".NET MAUI", "Firebase", "Azure DevOps", "Google Maps API", "Figma"],
+      github: "https://github.com/sushanthapa52/LocalBusinessExplorer",
       featured: true
     },
     {
       id: 2,
-      title: "Task Management App",
-      category: "web",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://via.placeholder.com/600x400/f093fb/ffffff?text=Task+Manager",
-      technologies: ["React", "Firebase", "Material-UI", "Redux"],
-      github: "https://github.com/username/task-manager",
-      demo: "https://demo-task-manager.com",
+      title: "E-Grocery",
+      category: "mobile",
+      description: "Developed a mobile shopping app with dynamic product listings using REST APIs. Implemented responsive and intuitive user interfaces, ensuring a seamless user experience. Integrated RESTful APIs to fetch and display dynamic data in the applications.",
+      image: eGrocery,
+      technologies: ["Java", "Firebase", "REST APIs"],
+      github: "https://github.com/username/e-grocery",
       featured: false
     },
     {
       id: 3,
-      title: "AI Image Generator",
-      category: "web",
-      description: "An AI-powered image generation tool that creates unique artwork based on text descriptions using machine learning models.",
-      image: "https://via.placeholder.com/600x400/4facfe/ffffff?text=AI+Generator",
-      technologies: ["Python", "TensorFlow", "React", "Flask"],
-      github: "https://github.com/username/ai-image-gen",
-      demo: "https://demo-ai-image.com",
-      featured: true
+      title: "Eco-Fy",
+      category: "mobile",
+      description: "Fetched real-time weather data and enabled users to rate locations. Built in error handling and intuitive UX.",
+      image: localBusinessExplorer,
+      technologies: ["Java", "Weather API", "Firebase"],
+      github: "https://github.com/sareek/Ecofy",
+      featured: false
     },
     {
       id: 4,
-      title: "Mobile Fitness App",
-      category: "mobile",
-      description: "A comprehensive fitness tracking app with workout plans, progress tracking, and social features for motivation.",
-      image: "https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Fitness+App",
-      technologies: ["React Native", "Firebase", "Redux", "Native Base"],
-      github: "https://github.com/username/fitness-app",
-      demo: "https://demo-fitness-app.com",
+      title: "Travel Buddy",
+      category: "design",
+      description: "An app for planning trips and adventures with friends.",
+      image: travelBuddy,
+      technologies: ["C#", "Google Map API", "Firebase"],
+      github: "https://github.com/sushanthapa52/TravelBuddy",
       featured: false
     },
     {
       id: 5,
-      title: "Portfolio Website Design",
+      title: "Local Business Explorer",
       category: "design",
-      description: "A modern portfolio website design system with reusable components and responsive layouts.",
-      image: "https://via.placeholder.com/600x400/4ecdc4/ffffff?text=Portfolio+Design",
-      technologies: ["Figma", "Adobe XD", "Prototyping", "Design System"],
-      github: null,
-      demo: "https://figma.com/portfolio-design",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "Weather Dashboard",
-      category: "web",
-      description: "A beautiful weather dashboard with real-time data, forecasts, and interactive charts using weather APIs.",
-      image: "https://via.placeholder.com/600x400/45b7d1/ffffff?text=Weather+App",
-      technologies: ["React", "Chart.js", "Weather API", "CSS Grid"],
-      github: "https://github.com/username/weather-dashboard",
-      demo: "https://demo-weather.com",
-      featured: false
+      description: "Design UI for a cross-platform app to explore nearby businesses and local events using Figma.",
+      image: localBusinessExplorer,
+      technologies: [".NET MAUI", "Firebase", "Azure DevOps", "Google Maps API", "Figma"],
+      github: "https://www.figma.com/design/F2im7TAefqt2iUCJ7AYXNQ/Untitled?node-id=0-1&p=f&t=7PLu9y2VDjHg7J4r-0",
+      featured: true
     }
   ];
 
@@ -136,18 +123,6 @@ const Projects = () => {
                         Code
                       </a>
                     )}
-                    <a 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link demo"
-                    >
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                      </svg>
-                      Live Demo
-                    </a>
                   </div>
                 </div>
               </div>
