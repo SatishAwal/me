@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Projects.css';
 import localBusinessExplorer from '../assets/localbusinessexplorer.png';
-import localBusiness from '../assets/localbusiness.jpeg';
+//import localBusiness from '../assets/localbusiness.jpeg';
 import travelBuddy from '../assets/travelbuddy.jpg';
 import eGrocery from '../assets/egrocery.png';
 
